@@ -8,7 +8,8 @@
 </template>
 
 <script>
-    import {}
+
+
 </script>
 
 <style>

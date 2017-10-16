@@ -3,7 +3,7 @@
         <app-header></app-header>
         <hr>
         <div class="row">
-            <servers></servers>
+            <app-servers></app-servers>
             <app-server-details></app-server-details>
         </div>
         <hr>
@@ -12,20 +12,37 @@
 </template>
 
 <script>
+
+
     import Header from './components/Shared/Header.vue';
     import Footer from './components/Shared/Footer.vue';
     import Servers from './components/Server/Servers.vue';
     import ServerDetails from './components/Server/ServerDetails.vue';
 
     export default {
+        data: function () {
+            return {
+                name: 'Cody',
+                age: 28
+            };
+        },
+        methods: {
+            changeName() {
+                this.name = 'Rich';
+            },
+            resetName() {
+                this.name = 'Cody';
+            }
+        },
         components: {
             appHeader: Header,
-            Servers,
+            'app-servers': Servers,
             'app-server-details': ServerDetails,
             'app-footer': Footer
         }
     }
 </script>
+
 
 <style>
 

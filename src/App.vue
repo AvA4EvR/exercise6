@@ -3,7 +3,12 @@
         <app-header></app-header>
         <hr>
         <div class="row">
-            <app-servers></app-servers>
+            <app-servers
+                    :myName="name"
+                    @nameWasReset="name = $event"
+                    :resetFn="resetName"
+                    :userAge="age"></app-servers>
+            <p>{{name}}</p>
             <app-server-details></app-server-details>
         </div>
         <hr>
@@ -23,7 +28,8 @@
         data: function () {
             return {
                 name: 'Cody',
-                age: 28
+                age: 28,
+                message: 'Hi'
             };
         },
         methods: {

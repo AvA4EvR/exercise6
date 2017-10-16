@@ -1,8 +1,8 @@
 <template>
     <div class="col-xs-12 col-sm-6">
         <ul class="list-group">
-            <li class="list-group-item" v-for="index in servers" @click="clickedServer">
-                Server #{{ index.id }}, status {{this.message}}
+            <li class="list-group-item" v-for="index in servers" @click="clickedServer(index.id, index.status)">
+                Server #{{ index.id }}
             </li>
         </ul>
     </div>
@@ -27,8 +27,9 @@
             }
         },
         methods: {
-            clickedServer() {
-
+            clickedServer(index, status) {
+                this.message = "Server # " + index + " selected, Status: " + status;
+                this.$emit('nameWasReset', this.message);
             }
         }
     }

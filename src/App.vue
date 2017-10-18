@@ -9,7 +9,6 @@
                     :resetFn="resetName"
                     :userAge="age"></app-servers>
             <p>{{name}}</p>
-            <app-server-details></app-server-details>
         </div>
         <hr>
         <app-footer></app-footer>
@@ -27,9 +26,9 @@
     export default {
         data: function () {
             return {
-                name: 'Cody',
+                name: '',
                 age: 28,
-                message: 'Hi'
+                message: ''
             };
         },
         methods: {
@@ -37,7 +36,7 @@
                 this.name = 'Rich';
             },
             resetName() {
-                this.name = 'Cody';
+                this.name = 'Co';
             }
         },
         components: {
